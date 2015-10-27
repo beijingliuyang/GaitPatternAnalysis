@@ -1,0 +1,267 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="cs386w.androidsensors.MainActivity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textSize="15dp"
+        android:text="@string/title" />
+
+    <TableLayout 
+        android:id="@+id/table1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:stretchColumns="*"
+        >
+        <TableRow>    
+   			 <TextView
+        	android:id="@+id/value"        	
+        	android:layout_height="wrap_content"
+        	android:padding="3dip"
+        	android:textSize="12sp"
+        	android:text="@string/value"  />
+        
+    		<TextView
+        	android:id="@+id/Xaxislabel"
+            android:padding="3dip"
+            android:textSize="12sp"
+        	android:text="@string/X_axis"  />
+    
+    		<TextView
+        	android:id="@+id/Yaxislabel"
+        	android:padding="3dip"
+        	android:textSize="12sp"
+        	android:text="@string/Y_axis"  />
+
+    		<TextView
+        	android:id="@+id/Zaxislabel"
+        	android:padding="3dip"
+        	android:textSize="12sp"
+        	android:text="@string/Z_axis"  />
+    </TableRow> 
+    <TableRow> 
+    		<TextView
+        	android:id="@+id/accelerometerlabel"
+       	 	android:layout_height="wrap_content"
+        	android:text="@string/accelerometer"
+        	android:textSize="12sp"  />
+    
+    		<TextView
+        	android:id="@+id/accelerometerx"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="0"  
+        	android:textSize="12sp"/>
+    
+    		<TextView
+        	android:id="@+id/accelerometery"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="0"   
+        	android:textSize="12sp"/>
+    
+    		<TextView
+        	android:id="@+id/accelerometerz"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="0"  
+        	android:textSize="12sp" />
+    </TableRow> 
+    
+    <TableRow>
+    		<TextView
+        	android:id="@+id/gravitylabel"
+       	 	android:layout_height="wrap_content"
+        	android:text="@string/gravity"  
+        	android:textSize="12sp" />
+    
+    		<TextView
+        	android:id="@+id/gravityx"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="0"  
+        	android:textSize="12sp"  />
+    
+    		<TextView
+        	android:id="@+id/gravityy"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="0"   
+        	android:textSize="12sp"  />
+    
+    		<TextView
+        	android:id="@+id/gravityz"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="0"  
+        	android:textSize="12sp"  />
+    </TableRow> 
+    <TableRow>
+    		<TextView
+        	android:id="@+id/gyroscopelabel"
+       	 	android:layout_height="wrap_content"
+        	android:text="@string/gyroscope" 
+        	android:textSize="12sp" />
+    
+    		<TextView
+        	android:id="@+id/gyroscopex"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="0" 
+        	android:textSize="12sp" />
+    
+    		<TextView
+        	android:id="@+id/gyroscopey"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="0"  
+        	android:textSize="12sp" />
+    
+    		<TextView
+        	android:id="@+id/gyroscopez"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="0" 
+        	android:textSize="12sp" />
+    </TableRow> 
+   
+     
+    </TableLayout>
+
+<TextView
+    android:id="@+id/textView2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/table1"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="15dp"
+    android:text="@string/inputrequest"
+    android:textSize="12dp" />
+
+<TableLayout
+    android:id="@+id/table2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textView2"
+    android:layout_centerHorizontal="true"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:stretchColumns="*"
+>    
+	<TableRow>
+    <TextView
+        	android:id="@+id/heightlabel"
+       	 	android:layout_height="wrap_content"
+        	android:text="@string/height" 
+        	android:textSize="12sp" />
+    
+    <TextView
+        	android:id="@+id/weightlabel"
+       	 	android:layout_height="wrap_content"
+        	android:text="@string/weight" 
+        	android:textSize="12sp" />
+    
+    <TextView
+        	android:id="@+id/agelabel"
+       	 	android:layout_height="wrap_content"
+        	android:text="@string/age" 
+        	android:textSize="12sp" />
+    
+    <TextView
+        	android:id="@+id/sexlabel"
+       	 	android:layout_height="wrap_content"
+        	android:text="@string/sex" 
+        	android:textSize="12sp" />
+    </TableRow>
+    <TableRow>
+
+        <EditText
+            android:id="@+id/heightinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"  
+            android:hint="cm"
+            android:inputType="number"/>
+	
+        <EditText
+            android:id="@+id/weightinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"  
+            android:hint="kg"
+            android:inputType="number"/> 
+        
+        <EditText
+            android:id="@+id/ageinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="3"  
+            android:hint="yrs"
+            android:inputType="number" /> 
+    
+        <RadioGroup android:id="@+id/radio" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/radio_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/male"
+                android:textSize="12sp"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/radio_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female"
+                android:textSize="12sp"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+        
+	</TableRow>
+	
+</TableLayout>
+
+<TextView
+    android:id="@+id/illustration1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/table2"
+    android:layout_centerHorizontal="true"
+    android:text="@string/illustration" 
+    android:textSize="12sp"  />
+
+
+<Switch
+        android:id="@+id/mySwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/illustration1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="Begin Collection" />
+
+<Button
+    android:id="@+id/button1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignRight="@+id/mySwitch"
+    android:layout_below="@+id/mySwitch"
+    android:layout_marginTop="16dp"
+    android:text="@string/send" />
+        
+</RelativeLayout>
