@@ -30,44 +30,37 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 
 public class MainActivity extends Activity implements SensorEventListener {
 
-	private SensorManager sensorManager;
-	private Sensor mAccelerometer;        
+    private SensorManager sensorManager;
+    private Sensor mAccelerometer;        
     private Sensor mGravity;
     private Sensor mGyroscope;
     public List<Sensor> listSensor;
-
     private TextView accelerometerx, accelerometery, accelerometerz;
-	private TextView gravityx, gravityy, gravityz;
-	private TextView gyroscopex, gyroscopey, gyroscopez;
-
+    private TextView gravityx, gravityy, gravityz;
+    private TextView gyroscopex, gyroscopey, gyroscopez;
     private Switch mySwitch;
-	
-	private String heightvalue;
-	private String weightvalue;
-	private String agevalue;
-	private String gender;
-	private int index = 0;
-	
-	private float accx = 0;
-	private float accy = 0;
-	private float accz = 0;
-	private float grax = 0;
-	private float gray = 0;
-	private float graz = 0;
-	private float gyrx = 0;
-	private float gyry = 0;
-	private float gyrz = 0;
-
-
+    private String heightvalue;
+    private String weightvalue;
+    private String agevalue;
+    private String gender;
+    private int index = 0;
+    private float accx = 0;
+    private float accy = 0;
+    private float accz = 0;
+    private float grax = 0;
+    private float gray = 0;
+    private float graz = 0;
+    private float gyrx = 0;
+    private float gyry = 0;
+    private float gyrz = 0;
     private String filename = "DataCollection.txt";
     private String newLine = "\n";
     private String email ="beijingliuyang@gmail.com";
-
-	static float[] reading = new float[7];     
-	static boolean record;
-	long mCurrentThreadTime;
-	private Runnable textFileLogger;
-	private android.os.Handler mHandler = new android.os.Handler();
+    static float[] reading = new float[7];     
+    static boolean record;
+    long mCurrentThreadTime;
+    private Runnable textFileLogger;
+    private android.os.Handler mHandler = new android.os.Handler();
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -77,14 +70,14 @@ public class MainActivity extends Activity implements SensorEventListener {
 		sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
 		mAccelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        mGyroscope = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-        mGravity = sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY);
+                mGyroscope = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+                mGravity = sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY);
 
 		sensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
-	    sensorManager.registerListener(this, mGyroscope, SensorManager.SENSOR_DELAY_NORMAL);
-	    sensorManager.registerListener(this, mGravity,  SensorManager.SENSOR_DELAY_NORMAL);
+	        sensorManager.registerListener(this, mGyroscope, SensorManager.SENSOR_DELAY_NORMAL);
+	        sensorManager.registerListener(this, mGravity,  SensorManager.SENSOR_DELAY_NORMAL);
     
-	    String firstline ="time accelerometerx accelerometery accelerometerz gyroscopex gyroscopey gyroscopez \n";
+	        String firstline ="time accelerometerx accelerometery accelerometerz gyroscopex gyroscopey gyroscopez \n";
 	    //Write the first line in txt file
 	    // create a file with filename in the external storage under Android/data/gaipatternandroidsensors/files folder
 	    try {
@@ -141,11 +134,11 @@ public class MainActivity extends Activity implements SensorEventListener {
 			@Override
 			public void onClick(View arg0) {
 				EditText height = (EditText) findViewById(R.id.heightinfo);
-		        EditText weight = (EditText) findViewById(R.id.weightinfo);
-		        EditText age = (EditText) findViewById(R.id.ageinfo);
+		                EditText weight = (EditText) findViewById(R.id.weightinfo);
+		                EditText age = (EditText) findViewById(R.id.ageinfo);
 				heightvalue = height.getText().toString();
-	            weightvalue = weight.getText().toString();
-	            agevalue = age.getText().toString();
+	            		weightvalue = weight.getText().toString();
+	            		agevalue = age.getText().toString();
 				
 	            try {
 	    	        FileOutputStream fos = openFileOutput(filename,
@@ -168,14 +161,14 @@ public class MainActivity extends Activity implements SensorEventListener {
 	    	            fos2.close();
 	    	            // send the DataCollection.txt by email  
 	    	            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-                        String[] recipients = new String[]{email, "",};
-                        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, recipients);
-                        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "DataCollection");
-                        emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "This is my data!");
-                        emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
-                        emailIntent.setType("text/plain");
-                        startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-                        finish();
+                            String[] recipients = new String[]{email, "",};
+                            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, recipients);
+                            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "DataCollection");
+                            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "This is my data!");
+                            emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+                            emailIntent.setType("text/plain");
+                            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+                            finish();
 	    	            
     	              }
 	    	    } catch (Exception e) {
@@ -183,7 +176,6 @@ public class MainActivity extends Activity implements SensorEventListener {
 	    	    }		            
 			}
 		});
-    
     	         
 	}	
 	
@@ -239,8 +231,8 @@ public class MainActivity extends Activity implements SensorEventListener {
 	protected void onResume() {
 		super.onResume();
 		sensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
-	    sensorManager.registerListener(this, mGyroscope, SensorManager.SENSOR_DELAY_NORMAL);
-	    sensorManager.registerListener(this, mGravity,  SensorManager.SENSOR_DELAY_NORMAL);
+		sensorManager.registerListener(this, mGyroscope, SensorManager.SENSOR_DELAY_NORMAL);
+	    	sensorManager.registerListener(this, mGravity,  SensorManager.SENSOR_DELAY_NORMAL);
 	}
 
 	//onPause() unregister the accelerometer for stop listening the events
@@ -259,10 +251,10 @@ public class MainActivity extends Activity implements SensorEventListener {
 		if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) 
 		   {accx = event.values[0];
 		    accelerometerx.setText(Float.toString(accx));
-			accy = event.values[1];
-			accelerometery.setText(Float.toString(accy));
-			accz = event.values[2];
-			accelerometerz.setText(Float.toString(accz));}
+		    accy = event.values[1];
+	            accelerometery.setText(Float.toString(accy));
+		    accz = event.values[2];
+		    accelerometerz.setText(Float.toString(accz));}
 	    if (event.sensor.getType() ==  Sensor.TYPE_GYROSCOPE)
            {gyrx = event.values[0];
 	    	gyroscopex.setText(Float.toString(gyrx));
