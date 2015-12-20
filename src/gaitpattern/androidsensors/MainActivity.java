@@ -86,7 +86,7 @@ public class MainActivity extends Activity implements SensorEventListener {
     
 	    String firstline ="time accelerometerx accelerometery accelerometerz gyroscopex gyroscopey gyroscopez \n";
 	    //Write the first line in txt file
-	    // create a file with filename in the external storage under Android/data/cs386w.androidsensors/files folder
+	    // create a file with filename in the external storage under Android/data/gaipatternandroidsensors/files folder
 	    try {
 	        FileOutputStream fos = openFileOutput(filename,
 	                Context.MODE_APPEND | Context.MODE_WORLD_READABLE);
